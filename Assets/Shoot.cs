@@ -10,6 +10,8 @@ public class Shoot : MonoBehaviour
     public float speed = 10f;
     public Transform bulletCreate;
     public Button button;
+    
+    private RaycastHit hit;
 
     private void OnEnable()
     {
@@ -24,6 +26,7 @@ public class Shoot : MonoBehaviour
     private void ShootGun()
     {
         var newBullet = Instantiate(bullet, bulletCreate);
-        newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * speed);   
+        
     }
 }
