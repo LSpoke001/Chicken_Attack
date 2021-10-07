@@ -32,8 +32,8 @@ public class PlayerRotate : MonoBehaviour
         xCurrent = Mathf.SmoothDamp(xCurrent, hor, ref xCcurrentVelocity, smoothTime);
         yCurrent = Mathf.SmoothDamp(yCurrent, ver, ref yCcurrentVelocity, smoothTime);
         
-        hor = Mathf.Clamp(xCurrent, -145, 30);
-        ver = Mathf.Clamp(yCurrent, -12, 0);
+        hor = Mathf.Clamp(xCurrent, -165, -50);
+        ver = Mathf.Clamp(yCurrent, -12, 20);
         
         transform.rotation = Quaternion.Euler(-ver,hor, 0f);
     }
