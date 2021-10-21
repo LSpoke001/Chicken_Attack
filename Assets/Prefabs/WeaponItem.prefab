@@ -65,9 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 05d70e8a3ee4d294b9ebbd8ffb85a4f7, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -425,7 +425,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: f3e3cd48e615ffc4dbd4cf51eeec4da7, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -449,3 +449,4 @@ MonoBehaviour:
   price: {fileID: 7886665267999050910}
   icon: {fileID: 1682216927701702363}
   buyButton: {fileID: 5513648202833741215}
+  buyIcon: {fileID: 21300000, guid: d26ab9699a412ec4e9944e09198b096c, type: 3}
