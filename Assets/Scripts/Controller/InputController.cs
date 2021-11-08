@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace ChickenAttack.Controller
 {
     public class InputController : MonoBehaviour
     {
+        [Inject] private MainController controller;
         private Joystick joystick;
         private Button attackButton;
         
@@ -18,20 +20,20 @@ namespace ChickenAttack.Controller
         private float speed = 300f;
         private float xCcurrentVelocity;
         private float yCcurrentVelocity;
-        public float smoothTime = 0.1f;
+        private float smoothTime = 0.1f;
     
+       
+    
+        private void Start()
+        {
+            joystick = controller.GetJoistic;
+            attackButton = controller.AttackButton;
+            attackButton.onClick.AddListener(ShootWeapon);
+        }
         private void OnDisable()
         {
             attackButton.onClick.RemoveListener(ShootWeapon);
         }
-    
-        private void Start()
-        {
-            joystick = MainController.inctance.GetJoistic;
-            attackButton = MainController.inctance.AttackButton;
-            attackButton.onClick.AddListener(ShootWeapon);
-        }
-    
         private void Update()
         {
             InputPlayerControll();
@@ -50,12 +52,14 @@ namespace ChickenAttack.Controller
             
             hor = Mathf.Clamp(xCurrent, 50, 165);
             ver = Mathf.Clamp(yCurrent, -12, 20);
-            MainController.inctance.GetPlayer.Controller.PlayerRotate(ver, hor);
+            controller.GetPlayer.Controller.PlayerRotate(ver, hor);
+            //MainController.inctance.GetPlayer.Controller.PlayerRotate(ver, hor);
         }
     
         private void ShootWeapon()
         {
-            MainController.inctance.WeaponsManager.ShootController.Shoot();
+            controller.WeaponsManager.ShootController.Shoot();
+           // MainController.inctance.WeaponsManager.ShootController.Shoot();
         }
     }
 }

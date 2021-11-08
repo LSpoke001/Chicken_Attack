@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Zenject;
 
 namespace ChickenAttack.UI
 {
     public class Shop : MonoBehaviour
     {
-        
+        [Inject] private MainController controller;
         [SerializeField] private WeaponView tmpWeapon;
         [SerializeField] private GameObject itemConteiner;
         [SerializeField] private Button exitButton;
@@ -31,7 +32,7 @@ namespace ChickenAttack.UI
         private void Start()
         {
             panelController = GetComponentInParent<PanelController>();
-            weaponsManager = MainController.inctance.WeaponsManager;
+            weaponsManager = controller.WeaponsManager;
             for (int i = 0; i < weaponsManager.Weapons.Count; i++)
             {
                 AddItem(weaponsManager.Weapons[i]);

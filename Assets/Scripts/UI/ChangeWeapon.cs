@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace ChickenAttack.UI
 {
     public class ChangeWeapon : MonoBehaviour
     {
+        [Inject] private MainController controller;
         [SerializeField] private Button next;
         [SerializeField] private Button previous;
 
@@ -26,7 +28,7 @@ namespace ChickenAttack.UI
 
         private void Start()
         {
-            weaponsManager = MainController.inctance.WeaponsManager;
+            weaponsManager = controller.WeaponsManager;
         }
 
         private void Next()

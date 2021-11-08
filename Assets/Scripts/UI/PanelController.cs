@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace ChickenAttack.UI
 {
     public class PanelController : MonoBehaviour
     {
+        [Inject] private MainController controller;
         [SerializeField] private GameObject menuPanel;
         [SerializeField] private GameObject shopPanel;
         [SerializeField] private GameObject overPanel;
@@ -27,7 +29,7 @@ namespace ChickenAttack.UI
         private void Start()
         {
            SetPanel(Panel.None);
-           playerHealth = MainController.inctance.GetPlayer.Health;
+           playerHealth = controller.GetPlayer.Health;
            playerHealth.Died += PlayerDied;
         }
 
