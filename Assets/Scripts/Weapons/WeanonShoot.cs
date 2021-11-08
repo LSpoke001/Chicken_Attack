@@ -11,6 +11,7 @@ namespace ChickenAttack
         private AudioSource audio;
         protected GameObject bullet;
         protected float speed = 2000f;
+        
 
         private void Start()
         {
@@ -20,6 +21,7 @@ namespace ChickenAttack
         public virtual void Instance(GameObject newBullet)
         {
             bullet = newBullet;
+
         }
         public virtual void Shoot()
         {

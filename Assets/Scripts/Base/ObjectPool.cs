@@ -7,8 +7,8 @@ namespace ChickenAttack
 {
     public class ObjectPool : MonoBehaviour
     {
-        [SerializeField] private GameObject _conteiner;
-        [SerializeField] private int _capacity;
+        [SerializeField] protected GameObject _conteiner;
+        protected int _capacity;
 
         private List<GameObject> _pool = new List<GameObject>();
 
@@ -16,12 +16,11 @@ namespace ChickenAttack
         {
             for (int i = 0; i < _capacity; i++)
             {
-                GameObject newChiken = Instantiate(prefab, _conteiner.transform);
-                newChiken.SetActive(false);
-                _pool.Add(newChiken);
+                GameObject newObject = Instantiate(prefab, _conteiner.transform);
+                newObject.SetActive(false);
+                _pool.Add(newObject);
             }
         }
-
         protected bool TryGetObject(out GameObject result)
         {
             result = _pool.FirstOrDefault(p => p.activeSelf == false);

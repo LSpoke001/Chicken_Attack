@@ -7,9 +7,9 @@ namespace ChickenAttack
 {
     public class Chicken : BaseObject
     {
-        private Transform player;
-        //[SerializeField] private float speed = .0001f;
         [SerializeField] private int damage = 1;
+        
+        private Transform player;
         private Animator animator;
 
         private void Start()

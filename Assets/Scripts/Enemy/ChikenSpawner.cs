@@ -16,6 +16,7 @@ namespace ChickenAttack
 
         private void Start()
         {
+            _capacity = 15;
             Initialize(chikenPrefab);
         }
 

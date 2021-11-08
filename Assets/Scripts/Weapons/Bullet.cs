@@ -8,10 +8,11 @@ namespace ChickenAttack
     public class Bullet : BaseObject
     {
         [SerializeField]private int damage = 2;
-        private float timeLife = 5f;
+        private float lifeTime = 5f;
+
         private void Start()
         {
-            Destroy(GetGameObject, timeLife);
+            Destroy(GetGameObject, lifeTime);
         }
 
         private void OnTriggerEnter(Collider other)
