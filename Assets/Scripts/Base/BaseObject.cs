@@ -11,7 +11,6 @@ namespace ChickenAttack
         protected Transform _transform;
         protected Rigidbody _rigidbody;
         protected Vector3 _position;
-        protected Vector3 _rotation;
 
         public GameObject GetGameObject
         {

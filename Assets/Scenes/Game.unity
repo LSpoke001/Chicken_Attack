@@ -8881,7 +8881,7 @@ MonoBehaviour:
   - {fileID: 1011590809}
   - {fileID: 713521782}
   - {fileID: 1089339872}
-  secondBetweenSpawn: 6
+  secondBetweenSpawn: 3
 --- !u!1001 &1514616947
 PrefabInstance:
   m_ObjectHideFlags: 0

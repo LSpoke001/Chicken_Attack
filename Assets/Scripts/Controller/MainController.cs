@@ -10,21 +10,11 @@ namespace ChickenAttack
 {
     public class MainController : MonoBehaviour
     {
-        //public static MainController inctance;
-    
         [SerializeField]private Player player;
         [SerializeField]private Joystick joystick;
         [SerializeField]private Button attackButton;
-
-        private GameObject controller;
-        private InputController inputController;
+        
         private WeaponsManager weaponsManager;
-    
-
-       /* public InputController GetInputController
-        {
-            get { return inputController; }
-        }*/
 
         public Player GetPlayer
         {
@@ -48,9 +38,6 @@ namespace ChickenAttack
 
         private void Awake()
         {
-            //inctance = this;
-            controller = new GameObject("Controller");
-           // inputController = controller.AddComponent<InputController>();
             weaponsManager = GetComponent<WeaponsManager>();
         }
     }

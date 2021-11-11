@@ -17,7 +17,7 @@ namespace ChickenAttack.Controller
         private float ver;
         private float xCurrent;
         private float yCurrent;
-        private float speed = 300f;
+        private float speed = 110f;
         private float xCcurrentVelocity;
         private float yCcurrentVelocity;
         private float smoothTime = 0.1f;
@@ -53,13 +53,11 @@ namespace ChickenAttack.Controller
             hor = Mathf.Clamp(xCurrent, 50, 165);
             ver = Mathf.Clamp(yCurrent, -12, 20);
             controller.GetPlayer.Controller.PlayerRotate(ver, hor);
-            //MainController.inctance.GetPlayer.Controller.PlayerRotate(ver, hor);
         }
     
         private void ShootWeapon()
         {
             controller.WeaponsManager.ShootController.Shoot();
-           // MainController.inctance.WeaponsManager.ShootController.Shoot();
         }
     }
 }
